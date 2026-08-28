@@ -1,0 +1,116 @@
+{
+  "test_cases": [
+    {
+      "id": "TC-001",
+      "description": "Mild, short-duration single symptom",
+      "input": {
+        "age": 28,
+        "sex": "Female",
+        "symptoms": ["Headache"],
+        "duration_days": 2,
+        "severity": "Mild",
+        "history": "",
+        "consent": true
+      },
+      "expected": {
+        "urgency_level": "low"
+      }
+    },
+    {
+      "id": "TC-002",
+      "description": "Moderate attention symptom (fever) with short duration",
+      "input": {
+        "age": 45,
+        "sex": "Male",
+        "symptoms": ["Fever", "Cough"],
+        "duration_days": 3,
+        "severity": "Moderate",
+        "history": "No known conditions",
+        "consent": true
+      },
+      "expected": {
+        "urgency_level": "moderate"
+      }
+    },
+    {
+      "id": "TC-003",
+      "description": "High attention symptom (shortness of breath)",
+      "input": {
+        "age": 62,
+        "sex": "Male",
+        "symptoms": ["Shortness of breath", "Fatigue"],
+        "duration_days": 1,
+        "severity": "Moderate",
+        "history": "Hypertension, on lisinopril",
+        "consent": true
+      },
+      "expected": {
+        "urgency_level": "high"
+      }
+    },
+    {
+      "id": "TC-004",
+      "description": "Long duration mild symptom escalates to moderate",
+      "input": {
+        "age": 34,
+        "sex": "Female",
+        "symptoms": ["Joint pain"],
+        "duration_days": 20,
+        "severity": "Mild",
+        "history": "",
+        "consent": true
+      },
+      "expected": {
+        "urgency_level": "moderate"
+      }
+    },
+    {
+      "id": "TC-005",
+      "description": "Missing consent should raise a validation error",
+      "input": {
+        "age": 40,
+        "sex": "Female",
+        "symptoms": ["Fatigue"],
+        "duration_days": 5,
+        "severity": "Mild",
+        "history": "",
+        "consent": false
+      },
+      "expected": {
+        "error": "ValueError"
+      }
+    },
+    {
+      "id": "TC-006",
+      "description": "Self-rated severe severity forces high urgency regardless of symptom",
+      "input": {
+        "age": 50,
+        "sex": "Male",
+        "symptoms": ["Headache"],
+        "duration_days": 1,
+        "severity": "Severe",
+        "history": "",
+        "consent": true
+      },
+      "expected": {
+        "urgency_level": "high"
+      }
+    },
+    {
+      "id": "TC-007",
+      "description": "No symptoms provided should raise a validation error",
+      "input": {
+        "age": 25,
+        "sex": "Female",
+        "symptoms": [],
+        "duration_days": 0,
+        "severity": "Mild",
+        "history": "",
+        "consent": true
+      },
+      "expected": {
+        "error": "ValueError"
+      }
+    }
+  ]
+}
