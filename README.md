@@ -136,7 +136,6 @@ Automated testing · expanded red-flag questions · stronger safety validation �
 
 ## Limitations
 
-- Experimental prototype for patient **awareness**, not diagnosis
 - Risk rules are prototype heuristics, not clinically validated
 - Red-flag detection relies on predefined symptom patterns
 - MedGemma inference runs through Colab; ngrok is a temporary dev bridge
