@@ -49,6 +49,9 @@ RAW_DIR = os.path.abspath(
     os.path.join(
         os.path.dirname(__file__),
         "..",
+        "..",
+        "..",
+        "knowledge_base",
         "raw",
     )
 )
@@ -148,6 +151,177 @@ SOURCE_REGISTRY: Dict[str, Source] = {
             "internal_medicine",
         ],
         notes="Medical reference documents stored in the Heart_Disease knowledge-base folder.",
+    ),
+
+    "CKD": Source(
+        source_id="CKD",
+        title="Chronic Kidney Disease",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["nephrology", "internal_medicine"],
+        notes="Medical reference documents stored in the CKD knowledge-base folder.",
+    ),
+
+    "COPD": Source(
+        source_id="COPD",
+        title="Chronic Obstructive Pulmonary Disease",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["pulmonology", "internal_medicine"],
+        notes="Medical reference documents stored in the COPD knowledge-base folder.",
+    ),
+
+    "Cancer": Source(
+        source_id="Cancer",
+        title="Cancer",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["oncology", "internal_medicine"],
+        notes="Medical reference documents stored in the Cancer knowledge-base folder.",
+    ),
+
+    "Chikungunya": Source(
+        source_id="Chikungunya",
+        title="Chikungunya",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the Chikungunya knowledge-base folder.",
+    ),
+
+    "Dengue": Source(
+        source_id="Dengue",
+        title="Dengue",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the Dengue knowledge-base folder.",
+    ),
+
+    "GERD": Source(
+        source_id="GERD",
+        title="Gastroesophageal Reflux Disease",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["gastroenterology", "internal_medicine"],
+        notes="Medical reference documents stored in the GERD knowledge-base folder.",
+    ),
+
+    "HyperTension": Source(
+        source_id="HyperTension",
+        title="Hypertension",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["cardiology", "internal_medicine"],
+        notes="Medical reference documents stored in the HyperTension knowledge-base folder.",
+    ),
+
+    "Malaria": Source(
+        source_id="Malaria",
+        title="Malaria",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the Malaria knowledge-base folder.",
+    ),
+
+    "Pneumonia": Source(
+        source_id="Pneumonia",
+        title="Pneumonia",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["pulmonology", "infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the Pneumonia knowledge-base folder.",
+    ),
+
+    "Stroke": Source(
+        source_id="Stroke",
+        title="Stroke",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["neurology", "internal_medicine"],
+        notes="Medical reference documents stored in the Stroke knowledge-base folder.",
+    ),
+
+    "TB": Source(
+        source_id="TB",
+        title="Tuberculosis",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["pulmonology", "infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the TB knowledge-base folder.",
+    ),
+
+    "UTI": Source(
+        source_id="UTI",
+        title="Urinary Tract Infection",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["urology", "infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the UTI knowledge-base folder.",
+    ),
+
+    "asthma": Source(
+        source_id="asthma",
+        title="Asthma",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["pulmonology", "internal_medicine"],
+        notes="Medical reference documents stored in the asthma knowledge-base folder.",
+    ),
+
+    "fatty liver": Source(
+        source_id="fatty liver",
+        title="Fatty Liver Disease",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["hepatology", "gastroenterology", "internal_medicine"],
+        notes="Medical reference documents stored in the fatty liver knowledge-base folder.",
+    ),
+
+    "gastroenteritis": Source(
+        source_id="gastroenteritis",
+        title="Gastroenteritis",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["gastroenterology", "infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the gastroenteritis knowledge-base folder.",
+    ),
+
+    "hepatitis": Source(
+        source_id="hepatitis",
+        title="Hepatitis",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["hepatology", "infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the hepatitis knowledge-base folder.",
+    ),
+
+    "migraine": Source(
+        source_id="migraine",
+        title="Migraine",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["neurology", "internal_medicine"],
+        notes="Medical reference documents stored in the migraine knowledge-base folder.",
+    ),
+
+    "obesity": Source(
+        source_id="obesity",
+        title="Obesity",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["endocrinology", "internal_medicine"],
+        notes="Medical reference documents stored in the obesity knowledge-base folder.",
+    ),
+
+    "typhoid": Source(
+        source_id="typhoid",
+        title="Typhoid Fever",
+        publisher="Medical Knowledge Base",
+        license="US-GOV-PUBLIC-DOMAIN",
+        specialty=["infectious_disease", "internal_medicine"],
+        notes="Medical reference documents stored in the typhoid knowledge-base folder.",
     ),
 }
 
