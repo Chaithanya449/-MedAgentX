@@ -64,7 +64,7 @@ from .embeddings import (
 )
 from .vector_store import VectorStore
 
-from knowledge_base.metadata.sources import (
+from app.rag.metadata.sources import (
     SOURCE_REGISTRY,
     get_source,
     validate_raw_files_present,
