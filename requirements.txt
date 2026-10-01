@@ -1,0 +1,13 @@
+# --- API backend ---
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+pydantic==2.13.5
+httpx==0.28.1
+
+# --- Frontend ---
+streamlit==1.64.0
+
+# --- RAG / embeddings ---
+sentence-transformers==6.1.0
+faiss-cpu==1.15.1
+numpy==2.3.5
