@@ -1,20 +1,49 @@
-name: MedAgentX CI
+name: MedAgentX CI/CD
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: read
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build Docker image
-        run: docker build -t medagentx .
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::285964548861:role/GitHubActions-MedAgentX
+          aws-region: ap-south-2
+
+      - name: Login to Amazon ECR
+        id: login-ecr
+        uses: aws-actions/amazon-ecr-login@v2
+
+      - name: Build and push Docker image
+        env:
+          ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+          IMAGE_TAG: ${{ github.sha }}
+        run: |
+          docker build -t $ECR_REGISTRY/medagentxv1:$IMAGE_TAG .
+          docker push $ECR_REGISTRY/medagentxv1:$IMAGE_TAG
+
+      - name: Update ECS service
+        run: |
+          aws ecs update-service \
+            --cluster medagentx-v1-cluster \
+            --service medagentx-v1-task-service \
+            --force-new-deployment
+
+      - name: Wait for ECS deployment
+        run: |
+          aws ecs wait services-stable \
+            --cluster medagentx-v1-cluster \
+            --services medagentx-v1-task-service
