@@ -33,7 +33,9 @@ jobs:
           IMAGE_TAG: ${{ github.sha }}
         run: |
           docker build -t $ECR_REGISTRY/medagentxv1:$IMAGE_TAG .
+          docker tag $ECR_REGISTRY/medagentxv1:$IMAGE_TAG $ECR_REGISTRY/medagentxv1:latest
           docker push $ECR_REGISTRY/medagentxv1:$IMAGE_TAG
+          docker push $ECR_REGISTRY/medagentxv1:latest
 
       - name: Update ECS service
         run: |
